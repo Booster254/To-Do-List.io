@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>William Nyakeri</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>William Nyakeri</h1>
+
+            <div id="loginForm">
+                <h2>Login</h2>
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <p id="loginError"></p>
+                <p>Don't have an account? <a href="#" onclick="showSignUpForm()">Sign Up</a></p>
+            </div>
+
+            <div id="signUpForm" style="display: none;">
+                <h2>Sign Up</h2>
+                <input type="text" id="newUsername" placeholder="Username">
+                <input type="password" id="newPassword" placeholder="Password">
+                <button onclick="signUp()">Sign Up</button>
+                <p id="signUpSuccess"></p>
+                <p>Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+            </div>
+
+            <div id="eisenhowerMatrix" style="display: none;">
+                <h1>My-To-Do-List</h1>
+
+                <div class="matrix">
+                    <div class="quadrant" id="quadrant1">
+                        <h2>Urgent and Important</h2>
+                        <button class="classification-btn" onclick="toggleTasks('tasks1')">Show/Hide Tasks</button>
+                        <ul id="tasks1" class="task-list"></ul>
+                    </div>
+
+                    <div class="quadrant" id="quadrant2">
+                        <h2>Important but Not Urgent</h2>
+                        <button class="classification-btn" onclick="toggleTasks('tasks2')">Show/Hide Tasks</button>
+                        <ul id="tasks2" class="task-list"></ul>
+                    </div>
+
+                    <div class="quadrant" id="quadrant3">
+                        <h2>Urgent but Not Important</h2>
+                        <button class="classification-btn" onclick="toggleTasks('tasks3')">Show/Hide Tasks</button>
+                        <ul id="tasks3" class="task-list"></ul>
+                    </div>
+
+                    <div class="quadrant" id="quadrant4">
+                        <h2>Not Urgent and Not Important</h2>
+                        <button class="classification-btn" onclick="toggleTasks('tasks4')">Show/Hide Tasks</button>
+                        <ul id="tasks4" class="task-list"></ul>
+                    </div>
+                </div>
+
+                <div id="addTask">
+                    <input type="text" id="taskInput" placeholder="Enter task description">
+                    <select id="prioritySelect">
+                        <option value="1">Urgent and Important</option>
+                        <option value="2">Important but Not Urgent</option>
+                        <option value="3">Urgent but Not Important</option>
+                        <option value="4">Not Urgent and Not Important</option>
+                    </select>
+                    <button onclick="addTask()">Add Task</button>
+                </div>
+
+                <div id="taskListContainer" style="display: none;">
+                    <h2>Task List</h2>
+                    <ul id="taskList"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
